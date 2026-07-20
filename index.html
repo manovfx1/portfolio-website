@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manobalan Subramanian — Immersive VR Development &amp; Generative AI Artist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HOME ================= -->
+<div class="home" id="home">
+
+  <header>
+    <div class="wrap bar">
+      <div class="name">Manobalan Subramanian</div>
+      <nav>
+        <a href="index.html#portfolio" class="active">Portfolio</a>
+        <a href="models.html">Models</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.8v2.1h.05c.53-1 1.83-2.1 3.77-2.1 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap hero-grid-area">
+    <div class="grid-box"></div>
+    <div class="home-inner">
+    <div class="eyebrow">Digital Designer — Immersive &amp; Creative Technology</div>
+    <div class="hero-title">Hi, I'm Manobalan.</div>
+    <div class="hero-sub">MSc Digital Design student, Brunel University London</div>
+    <p class="hero-bio">
+      I design and build interactive and immersive experiences spanning game design, VR/XR development, and
+      generative AI in creative production. My background is in visual communication, and I bring that design
+      foundation into 3D environments, game engines, and short-form video production.
+    </p>
+    </div>
+  </div>
+
+  <div class="wrap portfolio-section" id="portfolio">
+    <div class="project-card">
+      <div class="project-video" onclick="playVideo(this)">
+        <img class="thumb" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 540'%3E%3Crect width='900' height='540' fill='%2305060A'/%3E%3Ctext x='450' y='220' font-family='Georgia, serif' font-weight='bold' font-size='64' fill='%23E0A030' text-anchor='middle'%3ETHE%3C/text%3E%3Ctext x='450' y='300' font-family='Georgia, serif' font-weight='bold' font-size='64' fill='%23E0A030' text-anchor='middle'%3EPERFECT%3C/text%3E%3Ctext x='450' y='380' font-family='Georgia, serif' font-weight='bold' font-size='64' fill='%23E0A030' text-anchor='middle'%3EPLACE%3C/text%3E%3C/svg%3E" alt="The Perfect Place — title card">
+        <div class="play-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#14161A"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <iframe data-src="" title="The Perfect Place" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="project-info">
+        <div class="row-top">
+          <div class="project-title">The Perfect Place</div>
+          <a class="watch-link" id="watch-link" href="#" target="_blank" rel="noopener noreferrer">▶ WATCH ON YOUTUBE</a>
+        </div>
+        <p class="project-logline">A young artist searches everywhere for the meaning of creativity, only to realise it was never something to search for at all.</p>
+        <div class="project-meta">
+          <div><b>Role</b> — Writer / Director / Cinematographer / Editor</div>
+          <div><b>Tools</b> — Sony FX3, DaVinci Resolve, After Effects</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-bottom">
+    <footer class="site-footer home-footer">
+      <div class="wrap bar">
+        <div>© 2026 Manobalan Subramanian</div>
+        <div><a href="mailto:you@example.com">Email</a> &nbsp;·&nbsp; <a href="#">LinkedIn</a></div>
+      </div>
+    </footer>
+
+    <div class="wave-wrap">
+      <svg viewBox="0 0 1600 300" preserveAspectRatio="none" style="width:100%; height:300px; display:block;">
+        <path d="M0,190 C260,270 420,60 700,110 C980,160 1120,270 1600,150 L1600,300 L0,300 Z" fill="#4C6EF5"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  const YOUTUBE_VIDEO_ID = 'B2YJGTCLUYE';
+
+  const embedUrl = 'https://www.youtube.com/embed/' + YOUTUBE_VIDEO_ID + '?autoplay=1';
+  const watchUrl = 'https://www.youtube.com/watch?v=' + YOUTUBE_VIDEO_ID;
+
+  document.querySelector('.project-video iframe').dataset.src = embedUrl;
+  document.getElementById('watch-link').href = watchUrl;
+
+  function playVideo(container) {
+    const iframe = container.querySelector('iframe');
+    const thumb = container.querySelector('.thumb');
+    const btn = container.querySelector('.play-btn');
+    iframe.src = iframe.dataset.src;
+    iframe.style.display = 'block';
+    thumb.style.display = 'none';
+    btn.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
